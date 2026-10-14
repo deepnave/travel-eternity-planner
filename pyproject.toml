@@ -1,0 +1,24 @@
+[project]
+name = "travel-eternity-planner"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "simpZ4x", email = "simplezako@example.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "dotenv>=0.9.9",
+    "langchain-chroma>=1.1.0",
+    "langchain-community>=0.4.2",
+    "langchain-core>=1.6.10",
+    "langchain-google-genai>=4.4.2",
+    "langchain-text-splitters>=1.1.3",
+]
+
+[project.scripts]
+travel-eternity-planner = "travel_eternity_planner:main"
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"
