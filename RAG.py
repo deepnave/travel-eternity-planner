@@ -38,12 +38,12 @@ class RAG:
     def chunk(self, chunking_func = RecursiveCharacterTextSplitter, size = 500, overlap = 75):
         text_documents, pdf_documents = self.load()
         splitter = chunking_func(chunk_size=size, chunk_overlap=overlap)
-        # chunks = []
+        chunks = []
         if len(text_documents) >= 1:
-            chunks += splitter.split_documents(text_documents)
+            chunks.append(splitter.split_documents(text_documents))
         if len(pdf_documents) >= 1:
-            chunks = splitter.split_documents(pdf_documents)
-        print(chunks)
+            chunks.append(splitter.split_documents(pdf_documents))
+        return chunks
         
         
 
